@@ -1,4 +1,6 @@
-export default async function Home() {
+
+
+export async function Home() {
 
   const resposta = await fetch("https://back-end-ifms.vercel.app/campi", {
     next: {
@@ -9,14 +11,14 @@ export default async function Home() {
 
   return (
     <main>
-      <h1>Página inicialaa</h1>
+      <h1>Home</h1>
       {
-        campi.map((campus) =>
-        <div>
-          <p>{campus.nome_campus}</p>
-        </div>
-        )   
-      }
+          campi.map((campus) =>
+          <div>
+            <p>{campus.nome_campus}</p>
+          </div>
+          )  
+        }
     </main>
   )
 }

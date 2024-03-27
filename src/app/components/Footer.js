@@ -1,7 +1,8 @@
-export function Footer(){
+import styles from "./footer.module.css";
+export default function Footer(){
     return(
-        <footer>
-            <h1>Footer</h1>
+        <footer className={styles.rodape}>
+            <h1>Alex Garcia Siqueira Santos</h1>
         </footer>
     );
 }
