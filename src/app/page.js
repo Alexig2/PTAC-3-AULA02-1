@@ -1,6 +1,6 @@
+import styles from "./components/corpo.module.css";
 
-
-export async function Home() {
+export default async function Home() {
 
   const resposta = await fetch("https://back-end-ifms.vercel.app/campi", {
     next: {
@@ -10,8 +10,8 @@ export async function Home() {
   const campi = await resposta.json();
 
   return (
-    <main>
-      <h1>Home</h1>
+    <main className={styles.corpo}>
+      <h1 className={styles.titulo}>Home</h1>
       {
           campi.map((campus) =>
           <div>

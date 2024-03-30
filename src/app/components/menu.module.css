@@ -1,10 +1,25 @@
 .cabecalho {
     display: flex;
     height: 100px;
-    background-color: blanchedalmond;
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(255, 195, 145);
+    color: white;
+
 }
 
 .cabecalho h1 {
-    margin-top: 0px;
+    margin-top: 32px;
+    margin-left: 10px;
+}
+
+.cabecalho nav {
+    margin-top: 20px;
+}
+
+.Image {
+    margin-top: 6px;
+}
+
+.Link {
+    text-decoration: none;
+    color: white;
 }
