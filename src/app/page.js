@@ -1,24 +1,28 @@
 import styles from "./components/corpo.module.css";
 
 export default async function Home() {
+  try {
+    const resposta = await fetch("https://back-end-ifms.vercel.app/campi", {
+      next: {
+        revalidate: 1
+      }
+    });
 
-  const resposta = await fetch("https://back-end-ifms.vercel.app/campi", {
-    next: {
-      revalidate: 1
-    }
-  });
-  const campi = await resposta.json();
+    const campi = await resposta.json();
 
-  return (
-    <main className={styles.corpo}>
-      <h1 className={styles.titulo}>Home</h1>
-      {
+    return (
+      <main className={styles.corpo}>
+        <h1 className={styles.titulo}>Home</h1>
+        {
           campi.map((campus) =>
-          <div>
-            <p>{campus.nome_campus}</p>
-          </div>
-          )  
+            <div>
+              <p>{campus.nome_campus}</p>
+            </div>
+          )
         }
-    </main>
-  )
+      </main>
+    )
+  } catch {
+    <p>Erro ao carregar a página.</p>
+  }
 }
